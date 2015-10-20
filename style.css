@@ -12,6 +12,7 @@ body {
     background-color: #eee;
     height: 100%;
     overflow: auto;
+    font-size: 100%;
 }
 
 #header {
