@@ -3,7 +3,6 @@ html {
     padding: 0;
     background-color: #eee;
     height: 100%;
-    overflow: auto;
 }
 
 body {
@@ -11,8 +10,15 @@ body {
     padding: 0;
     background-color: #eee;
     height: 100%;
-    overflow: auto;
     font-size: 100%;
+}
+
+#body {
+}
+
+.container {
+    min-height: 100%;
+    position: relative;
 }
 
 #header {
@@ -66,22 +72,31 @@ body {
     font-family: 'Roboto', Helvetica, sans-serif;
 }
 
+.clearfix {
+    overflow: auto;
+}
+
 .main {
-    top: 5em;
-    padding-top: 3em;
-    position: relative;
     max-width: 1000px;
     margin-right: auto;
     margin-left: auto;
+    padding: 10px;
+    padding-bottom: 3.25em;
+    padding-top: 7em;
     /* min-height: calc(100% - 8.25em); */
     /* background-color: #aaa; */
 }
 
 .main img {
-    max-width: 100%;
+    max-width: calc(100% - 1em);
+    height: auto;
     display: block;
+    padding: .5em;
+}
+
+img.float {
     float: left;
-    margin: 0 4em 4em 0;
+    padding: 0 4em 4em 0;
 }
 
 .main p {
@@ -94,12 +109,15 @@ body {
     margin-left: auto;
     margin-right: auto;
     border: 0;
+    padding: .5em;
 }
 
 #footer {
+    clear: both;
     display: table;
     position: absolute;
     bottom: 0;
+    height: 3.25em;
     width: 100%;
     background-color: #333;
     font-family: 'Roboto', sans-serif;

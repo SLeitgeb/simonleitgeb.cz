@@ -11,7 +11,7 @@
 			"file": "index.html",
 			"settings":
 			{
-				"buffer_size": 1659,
+				"buffer_size": 1781,
 				"line_ending": "Unix"
 			}
 		},
@@ -19,7 +19,7 @@
 			"file": "style.css",
 			"settings":
 			{
-				"buffer_size": 1929,
+				"buffer_size": 1948,
 				"line_ending": "Unix"
 			}
 		},
@@ -81,15 +81,15 @@
 	},
 	"expanded_folders":
 	[
-		"/home/sleitgeb/Dropbox/skola/07_semestr/Webova_kartografie/web"
+		"/home/sleitgeb/private/cz.simonleitgeb/simonleitgeb.cz"
 	],
 	"file_history":
 	[
+		"/home/sleitgeb/.config/sublime-text-3/Packages/User/Preferences.sublime-settings",
 		"/home/sleitgeb/Dropbox/skola/07_semestr/Webova_kartografie/cviceni/01/prace.html",
 		"/home/sleitgeb/Dropbox/skola/07_semestr/Webova_kartografie/cviceni/01/mhd.html",
 		"/home/sleitgeb/Dropbox/skola/07_semestr/Webova_kartografie/cviceni/01/index.html",
 		"/home/sleitgeb/Dropbox/skola/07_semestr/Webova_kartografie/cviceni/01/style.css",
-		"/home/sleitgeb/.config/sublime-text-3/Packages/User/Preferences.sublime-settings",
 		"/home/sleitgeb/.config/sublime-text-3/Packages/Default/Preferences.sublime-settings",
 		"/run/media/sleitgeb/Pinguin/Knick, The/The.Knick.S01E01.720p.HDTV.X264-DIMENSION.srt",
 		"/run/media/sleitgeb/OS/Users/Public/Videos/Bones/Bones - 11x02 - The Brother in the Basement.KILLERS.English.part3(451-675).srt",
@@ -165,15 +165,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1659,
+						"buffer_size": 1781,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								65,
-								65
+								989,
+								989
 							]
 						],
 						"settings":
@@ -195,15 +195,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1929,
+						"buffer_size": 1948,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								326,
+								326
 							]
 						],
 						"settings":
@@ -213,7 +213,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 897.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 1,
