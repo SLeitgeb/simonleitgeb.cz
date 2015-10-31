@@ -137,3 +137,47 @@ img.float {
     float: right;
     margin-right: 1em;
 }
+
+form {
+    /* display: inline-block; */
+    text-align: center;
+    font-size: 1.5em;
+}
+
+#form * {
+    margin-bottom: 1em;
+}
+
+#form input, #form select.latlon {
+    border: 1px solid #009ebf;
+}
+
+#form input:focus, #form select.latlon:focus {
+    box-shadow: 0px 0px .7em rgba(0, 0, 0, 0.3);
+}
+
+#form input.coord.D {
+    width: 2.75em;
+}
+
+#form input.coord {
+    width: 2.25em;
+    color: #018AA7;
+    background-color: #bbb;
+}
+
+#form select.latlon {
+    width: 2.75em;
+    margin-left: 1em;
+}
+
+#form table {
+    margin: 0 auto;
+}
+
+#form p {
+    margin: 0;
+    position: relative;
+    top: 50%;
+    transform: translateY(-40%);
+}
