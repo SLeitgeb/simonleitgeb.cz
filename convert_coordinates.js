@@ -1,37 +1,28 @@
-var LatMod = 1;
-var LonMod = 1;
-var LatCoordD;
-var LatCoordM;
-var LatCoordS;
-var LonCoordD;
-var LonCoordM;
-var LonCoordS;
-var resultLat;
-var resultLon;
-var err;
-
 function getElement(name) {
-	return document.getElementById("form").elements[name];
+	return document.getElementById("convertor").elements[name];
 }
 
 function convertDMS(D, M, S) {
 	return parseInt(D) + parseInt(M)/60 + parseInt(S)/3600;
 }
 
-function parseCoords() {
-	LatCoordD = getElement("LatCoordD").value;
-	LatCoordM = getElement("LatCoordM").value;
-	LatCoordS = getElement("LatCoordS").value;
-	LonCoordD = getElement("LonCoordD").value;
-	LonCoordM = getElement("LonCoordM").value;
-	LonCoordS = getElement("LonCoordS").value;
-	LatMod = getElement("LatMod").value;
-	LonMod = getElement("LonMod").value;
-	var LatCoordDMS = String(Math.round(convertDMS(LatCoordD, LatCoordM, LatCoordS)*100000)/100000);
-	var LonCoordDMS = String(Math.round(convertDMS(LonCoordD, LonCoordM, LonCoordS)*100000)/100000);
-	resultLat = LatMod == -1 ? LatCoordDMS + " j.š." : LatCoordDMS + " s.š.";
-	resultLon = LonMod == -1 ? LonCoordDMS + " z.d." : LonCoordDMS + " v.d.";
-	document.getElementById("result").innerHTML = resultLat + "<br>" + resultLon;
+function parseCoords(axis) {
+	var D = getElement(axis + "CoordD").value;
+	var M = getElement(axis + "CoordM").value;
+	var S = getElement(axis + "CoordS").value;
+	var Mod = getElement(axis + "Mod").value;
+	var DMS = String(Math.round(convertDMS(D, M, S)*100000)/100000);
+	var dir;
+	if (axis == "Lat") {
+		dir = Mod -1 ? " j.š." : " s.š.";
+	} else {
+		dir = Mod -1 ? " z.d." : " v.d.";
+	}
+	return DMS + dir;
+}
+
+function displayCoords() {
+	document.getElementById("result").innerHTML = parseCoords("Lat") + "<br>" + parseCoords("Lon");
 }
 
 function getMax(field) {
