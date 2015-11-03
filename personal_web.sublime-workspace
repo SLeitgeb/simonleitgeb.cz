@@ -3,23 +3,23 @@
 	{
 		"selected_items":
 		[
+			[
+				"Lat",
+				"LatCoordM"
+			],
+			[
+				"LatCoord",
+				"LatCoordD"
+			]
 		]
 	},
 	"buffers":
 	[
 		{
-			"file": "index.html",
-			"settings":
-			{
-				"buffer_size": 1998,
-				"line_ending": "Unix"
-			}
-		},
-		{
 			"file": "convertor.html",
 			"settings":
 			{
-				"buffer_size": 2883,
+				"buffer_size": 3557,
 				"line_ending": "Unix"
 			}
 		},
@@ -27,23 +27,15 @@
 			"file": "style.css",
 			"settings":
 			{
-				"buffer_size": 2778,
+				"buffer_size": 3127,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "mhd.html",
+			"file": "convert_coordinates.js",
 			"settings":
 			{
-				"buffer_size": 1828,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "prace.html",
-			"settings":
-			{
-				"buffer_size": 1565,
+				"buffer_size": 1917,
 				"line_ending": "Unix"
 			}
 		}
@@ -55,10 +47,18 @@
 	"build_varint": "",
 	"command_palette":
 	{
-		"height": 132.0,
-		"last_filter": "",
+		"height": 392.0,
+		"last_filter": "pckgcn",
 		"selected_items":
 		[
+			[
+				"pckgcn",
+				"Package Control: Install Package"
+			],
+			[
+				"ssxml",
+				"Set Syntax: XML"
+			],
 			[
 				"sslatex",
 				"Set Syntax: LaTeX"
@@ -97,9 +97,15 @@
 	],
 	"file_history":
 	[
+		"/home/sleitgeb/private/cz.simonleitgeb/simonleitgeb.cz/index.html",
+		"/home/sleitgeb/private/cz.simonleitgeb/simonleitgeb.cz/brno.png",
+		"/home/sleitgeb/.config/sublime-text-3/Packages/User/Default (Linux).sublime-keymap",
+		"/home/sleitgeb/private/cz.simonleitgeb/simonleitgeb.cz/mhd.html",
+		"/home/sleitgeb/private/cz.simonleitgeb/simonleitgeb.cz/prace.html",
+		"/home/sleitgeb/Dropbox/skola/07_semestr/Metainformace_v_kartografii/cviceni/03/dc_web.xml",
+		"/home/sleitgeb/.config/sublime-text-3/Packages/User/Preferences.sublime-settings",
 		"/home/sleitgeb/private/cz.simonleitgeb/simonleitgeb.cz/convert_coordinates.js",
 		"/home/sleitgeb/private/cz.simonleitgeb/simonleitgeb.cz/convert.html",
-		"/home/sleitgeb/.config/sublime-text-3/Packages/User/Preferences.sublime-settings",
 		"/home/sleitgeb/Dropbox/skola/07_semestr/Webova_kartografie/cviceni/01/prace.html",
 		"/home/sleitgeb/Dropbox/skola/07_semestr/Webova_kartografie/cviceni/01/mhd.html",
 		"/home/sleitgeb/Dropbox/skola/07_semestr/Webova_kartografie/cviceni/01/index.html",
@@ -119,7 +125,7 @@
 	],
 	"find":
 	{
-		"height": 21.0
+		"height": 34.0
 	},
 	"find_in_files":
 	{
@@ -133,6 +139,14 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"Lat",
+			"var",
+			"alt",
+			"comment",
+			"col",
+			"pane",
+			"var",
+			"ctrl+alt",
 			"&",
 			"GR_ZM50",
 			"TRANSPARENT",
@@ -157,7 +171,7 @@
 		"highlight": true,
 		"in_selection": false,
 		"preserve_case": false,
-		"regex": true,
+		"regex": false,
 		"replace_history":
 		[
 		],
@@ -170,24 +184,24 @@
 	"groups":
 	[
 		{
-			"selected": 2,
+			"selected": 0,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "index.html",
+					"file": "convertor.html",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1998,
+						"buffer_size": 3557,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1998,
-								1998
+								2900,
+								2900
 							]
 						],
 						"settings":
@@ -197,19 +211,55 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 546.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 0,
 					"type": "text"
 				},
 				{
 					"buffer": 1,
-					"file": "convertor.html",
+					"file": "style.css",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2883,
+						"buffer_size": 3127,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2882,
+								2882
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CSS/CSS.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 2366.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				}
+			]
+		},
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 2,
+					"file": "convert_coordinates.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1917,
 						"regions":
 						{
 						},
@@ -222,105 +272,15 @@
 						],
 						"settings":
 						{
-							"syntax": "Packages/HTML/HTML.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false,
+							"word_wrap": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 504.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "style.css",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2778,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								2545,
-								2545
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/CSS/CSS.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 1638.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "mhd.html",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1828,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								827,
-								827
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 4,
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "prace.html",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1565,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								826,
-								826
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 3,
 					"type": "text"
 				}
 			]
@@ -343,6 +303,12 @@
 				0,
 				1,
 				1
+			],
+			[
+				0,
+				1,
+				1,
+				2
 			]
 		],
 		"cols":
@@ -353,6 +319,7 @@
 		"rows":
 		[
 			0.0,
+			0.5,
 			1.0
 		]
 	},
@@ -360,6 +327,10 @@
 	"output.find_results":
 	{
 		"height": 0.0
+	},
+	"output.unsaved_changes":
+	{
+		"height": 94.0
 	},
 	"pinned_build_system": "",
 	"project": "personal_web.sublime-project",
@@ -374,6 +345,10 @@
 		"last_filter": "",
 		"selected_items":
 		[
+			[
+				"concoor",
+				"convert_coordinates.js"
+			]
 		],
 		"width": 0.0
 	},
@@ -407,7 +382,7 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 150.0,
+	"side_bar_width": 179.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{

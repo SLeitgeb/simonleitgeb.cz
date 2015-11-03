@@ -157,17 +157,18 @@ form {
 }
 
 #form input.coord.D {
-    width: 2.75em;
+    width: 2em;
 }
 
 #form input.coord {
-    width: 2.25em;
+    width: 1.5em;
     color: #018AA7;
     background-color: #bbb;
+    text-align: right;
 }
 
 #form select.latlon {
-    width: 2.75em;
+    width: 2em;
     margin-left: 1em;
 }
 
@@ -180,4 +181,21 @@ form {
     position: relative;
     top: 50%;
     transform: translateY(-40%);
+}
+
+#form input.error {
+    color: red;
+    border: 1px solid red;
+    background-color: #FFA5A5;
+}
+
+#form input.error:focus {
+    box-shadow: 0px 0px .7em rgba(255, 0, 0, 0.3)
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
 }
