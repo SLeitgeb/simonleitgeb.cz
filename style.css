@@ -144,52 +144,52 @@ form {
     font-size: 1.5em;
 }
 
-#form * {
+#convertor * {
     margin-bottom: 1em;
 }
 
-#form input, #form select.latlon {
+#convertor input, #convertor select.latlon {
     border: 1px solid #009ebf;
 }
 
-#form input:focus, #form select.latlon:focus {
+#convertor input:focus, #convertor select.latlon:focus {
     box-shadow: 0px 0px .7em rgba(0, 0, 0, 0.3);
 }
 
-#form input.coord.D {
+#convertor input.coord.D {
     width: 2em;
 }
 
-#form input.coord {
+#convertor input.coord {
     width: 1.5em;
     color: #018AA7;
     background-color: #bbb;
     text-align: right;
 }
 
-#form select.latlon {
+#convertor select.latlon {
     width: 2em;
     margin-left: 1em;
 }
 
-#form table {
+#convertor table {
     margin: 0 auto;
 }
 
-#form p {
+#convertor p {
     margin: 0;
     position: relative;
     top: 50%;
     transform: translateY(-40%);
 }
 
-#form input.error {
+#convertor input.error {
     color: red;
     border: 1px solid red;
     background-color: #FFA5A5;
 }
 
-#form input.error:focus {
+#convertor input.error:focus {
     box-shadow: 0px 0px .7em rgba(255, 0, 0, 0.3)
 }
 
