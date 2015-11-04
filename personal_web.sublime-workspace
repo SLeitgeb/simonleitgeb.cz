@@ -28,10 +28,13 @@
 	"buffers":
 	[
 		{
+			"contents": "<!DOCTYPE html>\n\n<html>\n    <head>\n        <meta charset=\"utf-8\">\n        <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0\"/>\n        <title>Konvertor souřadnic | Šimon Leitgeb</title>\n        <link rel=\"stylesheet\" type=\"text/css\" href=\"normalize.css\">\n        <link href='https://fonts.googleapis.com/css?family=Roboto%7CLato%7CSlabo+27px%7CMontserrat' rel='stylesheet' type='text/css'>\n        <link rel=\"stylesheet\" type=\"text/css\" href=\"style.css\">\n        <script type=\"text/javascript\" src=\"convert_coordinates.js\"></script>\n    </head>\n    <body>\n        <div class=\"container\">\n            <div id=\"header\">\n                <div class=\"main-menu\">\n                    <h1 id=\"name\">Šimon Leitgeb</h1>\n                    <div id=\"menu\">\n                        <a href=\"index.html\">DOMŮ</a>\n                        <a href=\"prace.html\">PRÁCE</a>\n                        <a href=\"mhd.html\">MAPA MHD</a>\n                        <a href=\"convertor.html\">KONVERTOR</a>\n                        <a href=\"#\">KONTAKT</a>\n                    </div>\n                </div>\n            </div>\n            <div class=\"main clearfix\">\n                <form id=\"convertor\">\n                    <table>\n                        <tr>\n                            <td><p>Zeměpisná šířka: </p></td>\n                            <td><select name=\"LatMod\" class=\"latlon\">\n                                <option value=\"1\">S</option>\n                                <option value=\"-1\">J</option>\n                            </select>\n                            <input type=\"number\" name=\"LatCoordD\" class=\"coord D\" min=\"0\" max=\"90\" onchange=\"validateField('LatCoordD')\" value=\"49\">°\n                            <input type=\"number\" name=\"LatCoordM\" class=\"coord\" min=\"0\" max=\"59\" onchange=\"validateField('LatCoordM')\" value=\"15\">'\n                            <input type=\"number\" name=\"LatCoordS\" class=\"coord\" min=\"0\" max=\"59\" onchange=\"validateField('LatCoordS')\" value=\"20\">\"</td>\n                        </tr>\n                        <tr>\n                            <td><p>Zeměpisná délka: </p></td>\n                            <td><select name=\"LonMod\" class=\"latlon\">\n                                <option value=\"1\">V</option>\n                                <option value=\"-1\">Z</option>\n                            </select>\n                            <input type=\"number\" name=\"LonCoordD\" class=\"coord D\" min=\"0\" max=\"180\" onchange=\"validateField('LonCoordD')\" value=\"16\">°\n                            <input type=\"number\" name=\"LonCoordM\" class=\"coord\" min=\"0\" max=\"59\" onchange=\"validateField('LonCoordM')\" value=\"30\">'\n                            <input type=\"number\" name=\"LonCoordS\" class=\"coord\" min=\"0\" max=\"59\" onchange=\"validateField('LonCoordS')\" value=\"50\">\"</td>\n                        </tr>\n                    </table>\n                    <input type=\"button\" onclick=\"validateForm()\" value=\"Submit\"><br>\n                    <!-- <input type=\"text\" name=\"result\" class=\"coord result\"> -->\n                    <p id=\"result\"></p>\n                </form>\n            </div>\n            <div id=\"footer\">\n                <p id=\"copyright\">&copy; Šimon Leitgeb 2015</p>\n                <p id=\"contact\"><a href=\"mailto:leitgeb.simon@gmail.com\">Napište mi email.</a></p>\n            </div>\n        </div>\n    </body>\n</html>",
 			"file": "convertor.html",
+			"file_size": 3405,
+			"file_write_time": 130911168355905656,
 			"settings":
 			{
-				"buffer_size": 3338,
+				"buffer_size": 3388,
 				"line_ending": "Unix"
 			}
 		},
@@ -47,7 +50,7 @@
 			"file": "convert_coordinates.js",
 			"settings":
 			{
-				"buffer_size": 2438,
+				"buffer_size": 2396,
 				"line_ending": "Unix"
 			}
 		}
@@ -113,6 +116,7 @@
 	],
 	"file_history":
 	[
+		"/home/sleitgeb/.config/sublime-text-3/Packages/Default/Default (Linux).sublime-keymap",
 		"/home/sleitgeb/private/cz.simonleitgeb/simonleitgeb.cz/index.html",
 		"/home/sleitgeb/private/cz.simonleitgeb/simonleitgeb.cz/brno.png",
 		"/home/sleitgeb/.config/sublime-text-3/Packages/User/Default (Linux).sublime-keymap",
@@ -155,6 +159,19 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"markError",
+			"ctrl+d",
+			"validateField",
+			"validValues",
+			"validateField",
+			"')\"",
+			"validateField",
+			"field.substr(0, 8)",
+			"element",
+			"Element",
+			"element",
+			"console.log",
+			"classes",
 			"#form",
 			"getElement",
 			"dir",
@@ -219,7 +236,7 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 0,
 			"sheets":
 			[
 				{
@@ -228,15 +245,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 3338,
+						"buffer_size": 3388,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1222,
-								1222
+								1146,
+								1146
 							]
 						],
 						"settings":
@@ -246,7 +263,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 252.0,
+						"translation.y": 266.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 1,
@@ -265,52 +282,8 @@
 						"selection":
 						[
 							[
-								2249,
-								2249
-							],
-							[
-								2291,
-								2291
-							],
-							[
-								2309,
-								2309
-							],
-							[
-								2370,
-								2370
-							],
-							[
-								2394,
-								2394
-							],
-							[
-								2479,
-								2479
-							],
-							[
-								2525,
-								2525
-							],
-							[
-								2642,
-								2642
-							],
-							[
-								2710,
-								2710
-							],
-							[
-								2752,
-								2752
-							],
-							[
-								2856,
-								2856
-							],
-							[
-								2958,
-								2958
+								3272,
+								3272
 							]
 						],
 						"settings":
@@ -320,10 +293,10 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 1919.0,
+						"translation.y": 2464.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 2,
 					"type": "text"
 				}
 			]
@@ -338,15 +311,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2438,
+						"buffer_size": 2396,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								588,
-								588
+								2391,
+								2391
 							]
 						],
 						"settings":
@@ -356,10 +329,10 @@
 							"word_wrap": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 882.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 0,
 					"type": "text"
 				}
 			]
@@ -398,7 +371,7 @@
 		"rows":
 		[
 			0.0,
-			0.5,
+			0.408341915551,
 			1.0
 		]
 	},
@@ -453,7 +426,7 @@
 		],
 		"width": 0.0
 	},
-	"selected_group": 0,
+	"selected_group": 1,
 	"settings":
 	{
 	},

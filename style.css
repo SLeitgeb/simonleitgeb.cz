@@ -144,8 +144,8 @@ form {
     font-size: 1.5em;
 }
 
-#convertor * {
-    margin-bottom: 1em;
+#convertor p {
+    margin: 0.5em 0;
 }
 
 #convertor input, #convertor select.latlon {
@@ -164,23 +164,16 @@ form {
     width: 1.5em;
     color: #018AA7;
     background-color: #bbb;
-    text-align: right;
+    text-align: center;
 }
 
 #convertor select.latlon {
     width: 2em;
-    margin-left: 1em;
+    margin-left: .5em;
 }
 
 #convertor table {
     margin: 0 auto;
-}
-
-#convertor p {
-    margin: 0;
-    position: relative;
-    top: 50%;
-    transform: translateY(-40%);
 }
 
 #convertor input.error {
