@@ -33,9 +33,9 @@
                                 <option value="1">S</option>
                                 <option value="-1">J</option>
                             </select>
-                            <input type="number" name="LatCoordD" class="coord D" min="0" max="90" onchange="validateField('LatCoordD')" value="49">°
-                            <input type="number" name="LatCoordM" class="coord" min="0" max="59" onchange="validateField('LatCoordM')" value="15">'
-                            <input type="number" name="LatCoordS" class="coord" min="0" max="59" onchange="validateField('LatCoordS')" value="20">"</td>
+                            <input type="number" name="LatCoordD" class="coord D" min="0" max="90" onchange="validateField('LatCoordD')">°
+                            <input type="number" name="LatCoordM" class="coord" min="0" max="59" onchange="validateField('LatCoordM')">'
+                            <input type="number" name="LatCoordS" class="coord" min="0" max="59" onchange="validateField('LatCoordS')">"</td>
                         </tr>
                         <tr>
                             <td><p>Zeměpisná délka: </p></td>
@@ -43,22 +43,19 @@
                                 <option value="1">V</option>
                                 <option value="-1">Z</option>
                             </select>
-                            <input type="number" name="LonCoordD" class="coord D" min="0" max="180" onchange="validateField('LonCoordD')" value="16">°
-                            <input type="number" name="LonCoordM" class="coord" min="0" max="59" onchange="validateField('LonCoordM')" value="30">'
-                            <input type="number" name="LonCoordS" class="coord" min="0" max="59" onchange="validateField('LonCoordS')" value="50">"</td>
+                            <input type="number" name="LonCoordD" class="coord D" min="0" max="180" onchange="validateField('LonCoordD')">°
+                            <input type="number" name="LonCoordM" class="coord" min="0" max="59" onchange="validateField('LonCoordM')">'
+                            <input type="number" name="LonCoordS" class="coord" min="0" max="59" onchange="validateField('LonCoordS')">"</td>
                         </tr>
                     </table>
                     <input type="button" onclick="validateForm()" value="Submit" style="margin-top: 0.25em"><br>
                     <!-- <input type="text" name="result" class="coord result"> -->
-                    <p id="result"></p>
+                    <div style="height:5em;line-height:5em">
+                        <p id="result"></p>                        
+                    </div>
+                    <a id="gmapsPlot" href="" target="_blank" style="display:none">Jdi na Google Maps!</a>
                 </form>
-
-                <iframe
-                    width="450"
-                    height="250"
-                    frameborder="0" style="border:0"
-                    src="https://www.google.com/maps/embed/v1/search?key=AIzaSyCEx9TllUOaZxCMekn9Oc_orfdOWHXWaVI&q=-132.564,57.3827" allowfullscreen>
-                </iframe>
+                <img id="wmsPlot" src="" alt="WMS coordinates plot" style="display:none;margin-left:auto;margin-right:auto">
             </div>
             <div id="footer">
                 <p id="copyright">&copy; Šimon Leitgeb 2015</p>

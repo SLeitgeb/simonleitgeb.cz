@@ -17,7 +17,21 @@ function parseCoords(axis) {
 function displayCoords() {
 	var LatMod = getElement("LatMod").value == -1 ? " j.š." : " s.š.";
 	var LonMod = getElement("LonMod").value == -1 ? " z.d." : " v.d.";
-	document.getElementById("result").innerHTML = String(Math.abs(parseCoords("Lat"))) + LatMod + "<br>" + String(Math.abs(parseCoords("Lon"))) + LonMod;
+	var Lat = parseCoords("Lat");
+	var Lon = parseCoords("Lon");
+	var bottom = Lat - 0.025;
+	var left = Lon - 0.0375;
+	var top = Lat + 0.025;
+	var right = Lon + 0.0375;
+	document.getElementById("result").innerHTML = String(Math.abs(Lat)) + LatMod + "<br>" + String(Math.abs(Lon)) + LonMod;
+	document.getElementById("gmapsPlot").style.display = "block";
+	document.getElementById("gmapsPlot").href = "https://www.google.cz/maps/@" + String(Lat) + "," + String(Lon) + ",14z?hl=en";
+	if (Lat > 48.55 && Lat < 51.06 && Lon > 12.09 && Lon < 18.87) {
+		document.getElementById("wmsPlot").src = "http://geoportal.cuzk.cz/WMS_ZM50_PUB/service.svc/get?LAYERS=GR_ZM50&TRANSPARENT=TRUE&FORMAT=image%2Fpng&VERSION=1.3.0&EXCEPTIONS=XML&SERVICE=WMS&REQUEST=GetMap&STYLES=&CRS=EPSG%3A4326&_OLSALT=0.1830467802938074&BBOX=" + bottom + "," + left + "," + top + "," + right + "&WIDTH=500&HEIGHT=500";
+		document.getElementById("wmsPlot").style.display = "block";
+	} else {
+		document.getElementById("wmsPlot").style.display = "none";
+	}
 }
 
 function getMax(field) {
@@ -55,7 +69,7 @@ function validateField(field) {
 		markError(M, !validateValue(M.value, 59));
 		markError(S, !validateValue(S.value, 59));
 	}
-	
+
 	markError(getElement(field), !/^[0-9]{1,3}$/.test(getElement(field).value) || !validateValue(getElement(field).value, getMax(field)));
 }
 
@@ -80,10 +94,19 @@ function validateForm() {
 	errors += (!validateValue(LatM, 59) || !validateValue(LonM, 59)) ? "Minuty musí být menší než 60'.<br>" : "";
 	errors += (!validateValue(LatS, 59) || !validateValue(LonS, 59)) ? "Sekundy musí být menší než 60\".<br>" : "";
 	errors += (!/^[0-9]{1,3}$/.test(LatD)) ? "Souřadnice mohou obsahovat pouze celá čísla." : "";
+	errors += (!/^[0-9]{1,3}$/.test(LatM)) ? "Souřadnice mohou obsahovat pouze celá čísla." : "";
+	errors += (!/^[0-9]{1,3}$/.test(LatS)) ? "Souřadnice mohou obsahovat pouze celá čísla." : "";
+	errors += (!/^[0-9]{1,3}$/.test(LonD)) ? "Souřadnice mohou obsahovat pouze celá čísla." : "";
+	errors += (!/^[0-9]{1,3}$/.test(LonM)) ? "Souřadnice mohou obsahovat pouze celá čísla." : "";
+	errors += (!/^[0-9]{1,3}$/.test(LonS)) ? "Souřadnice mohou obsahovat pouze celá čísla." : "";
 
 	if (errors == "") {
+		document.getElementById("result").className = document.getElementById("result").className.indexOf("error") != -1 ? document.getElementById("result").className.replace(" error", "") : document.getElementById("result").className;
 		displayCoords();
 	} else {
+		document.getElementById("gmapsPlot").style.display = "none";
+		document.getElementById("wmsPlot").style.display = "none";
 		document.getElementById("result").innerHTML = errors;
+		document.getElementById("result").className += document.getElementById("result").className.indexOf("error") == -1 ? " error" : "";
 	}
 }
