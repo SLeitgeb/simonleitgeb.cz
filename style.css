@@ -157,8 +157,11 @@ form {
     margin: 0.5em 0;
 }
 
+#convertor td {
+    color: #018AA7;
+}
+
 #convertor input, #convertor select.latlon {
-    border: 1px solid #009ebf;
 }
 
 #convertor input:focus, #convertor select.latlon:focus {
@@ -176,9 +179,15 @@ form {
     text-align: center;
 }
 
-#convertor select.latlon {
+#convertor select.coord {
     width: 2em;
     margin-left: .5em;
+    color: #018AA7;
+}
+
+#convertor .coord {
+    border: 1px solid #009ebf;
+    border-radius: 4px;
 }
 
 #convertor table {
@@ -204,6 +213,19 @@ form {
     display: inline-block;
     vertical-align: middle;
     line-height: normal;
+}
+
+#convertor .coord.button {
+    margin-top: 0.25em;
+    color: #eee;
+    background-color: #009ebf;
+    width: auto;
+}
+
+a.button.coord {
+    margin-left: 0.5em;
+    visibility: hidden;
+    padding: 1px 5px;
 }
 
 input::-webkit-outer-spin-button,

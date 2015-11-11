@@ -2,6 +2,12 @@ function getElement(name) {
 	return document.getElementById("convertor").elements[name];
 }
 
+function autoTab(origin, dest) {
+	if (origin.value.length == origin.maxLength) {
+		dest.select();
+	}
+}
+
 function convertDMS(D, M, S) {
 	return parseInt(D) + parseInt(M)/60 + parseInt(S)/3600;
 }
@@ -24,8 +30,8 @@ function displayCoords() {
 	var top = Lat + 0.025;
 	var right = Lon + 0.0375;
 	document.getElementById("result").innerHTML = String(Math.abs(Lat)) + LatMod + "<br>" + String(Math.abs(Lon)) + LonMod;
-	document.getElementById("gmapsPlot").style.display = "block";
-	document.getElementById("gmapsPlot").href = "https://www.google.cz/maps/@" + String(Lat) + "," + String(Lon) + ",14z?hl=en";
+	document.getElementById("gmapsPlot").style.visibility = "visible";
+	document.getElementById("gmapsPlot").href = "https://maps.google.com/maps/?q=" + String(Lat) + "," + String(Lon);
 	if (Lat > 48.55 && Lat < 51.06 && Lon > 12.09 && Lon < 18.87) {
 		document.getElementById("wmsPlot").src = "http://geoportal.cuzk.cz/WMS_ZM50_PUB/service.svc/get?LAYERS=GR_ZM50&TRANSPARENT=TRUE&FORMAT=image%2Fpng&VERSION=1.3.0&EXCEPTIONS=XML&SERVICE=WMS&REQUEST=GetMap&STYLES=&CRS=EPSG%3A4326&_OLSALT=0.1830467802938074&BBOX=" + bottom + "," + left + "," + top + "," + right + "&WIDTH=500&HEIGHT=500";
 		document.getElementById("wmsPlot").style.display = "block";
@@ -34,18 +40,18 @@ function displayCoords() {
 	}
 }
 
-function getMax(field) {
-	if (field == "LatCoordD" || field == "LatRow") {
+function getMax(name) {
+	if (name == "LatCoordD" || name == "LatRow") {
 		return 90;
-	} else if (field == "LonCoordD" || field == "LonRow") {
+	} else if (name == "LonCoordD" || name == "LonRow") {
 		return 180;
-	} else if (['LatCoordM', 'LatCoordS', 'LonCoordM', 'LonCoordS'].indexOf(field) > -1) {
+	} else if (['LatCoordM', 'LatCoordS', 'LonCoordM', 'LonCoordS'].indexOf(name) > -1) {
 		return 59;
 	}
 }
 
 function markError(field, bool) {
-	field.className = field.className;
+	// field.className = field.className;
 	if (bool) {
 		field.className = field.className.indexOf('error') == -1 ? field.className += " error" : field.className;
 	} else {
@@ -58,9 +64,9 @@ function validateValue(value, max) {
 }
 
 function validateField(field) {
-	var M = getElement(field.substr(0,3) + "CoordM");
-	var S = getElement(field.substr(0,3) + "CoordS");
-	var rowValidity = validateRow(field.substr(0,3));
+	var M = getElement(field.name.substr(0,3) + "CoordM");
+	var S = getElement(field.name.substr(0,3) + "CoordS");
+	var rowValidity = validateRow(field.name.substr(0,3));
 
 	if (!rowValidity) {
 		markError(M, M.value != 0);
@@ -70,7 +76,21 @@ function validateField(field) {
 		markError(S, !validateValue(S.value, 59));
 	}
 
-	markError(getElement(field), !/^[0-9]{1,3}$/.test(getElement(field).value) || !validateValue(getElement(field).value, getMax(field)));
+	markError(field, !/^[0-9]{1,3}$/.test(field.value) || !validateValue(field.value, getMax(field.name)));
+
+	// var M = getElement(field.substr(0,3) + "CoordM");
+	// var S = getElement(field.substr(0,3) + "CoordS");
+	// var rowValidity = validateRow(field.substr(0,3));
+
+	// if (!rowValidity) {
+	// 	markError(M, M.value != 0);
+	// 	markError(S, S.value != 0);
+	// } else if (rowValidity) {
+	// 	markError(M, !validateValue(M.value, 59));
+	// 	markError(S, !validateValue(S.value, 59));
+	// }
+
+	// markError(getElement(field), !/^[0-9]{1,3}$/.test(getElement(field).value) || !validateValue(getElement(field).value, getMax(field)));
 }
 
 function validateRow(row) {
@@ -104,7 +124,7 @@ function validateForm() {
 		document.getElementById("result").className = document.getElementById("result").className.indexOf("error") != -1 ? document.getElementById("result").className.replace(" error", "") : document.getElementById("result").className;
 		displayCoords();
 	} else {
-		document.getElementById("gmapsPlot").style.display = "none";
+		document.getElementById("gmapsPlot").style.visibility = "hidden";
 		document.getElementById("wmsPlot").style.display = "none";
 		document.getElementById("result").innerHTML = errors;
 		document.getElementById("result").className += document.getElementById("result").className.indexOf("error") == -1 ? " error" : "";
