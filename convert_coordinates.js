@@ -1,3 +1,5 @@
+document.convertor.LatCoordD.select();
+
 function getElement(name) {
 	return document.getElementById("convertor").elements[name];
 }
