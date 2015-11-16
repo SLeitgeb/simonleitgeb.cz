@@ -4,8 +4,8 @@ function getElement(name) {
 	return document.getElementById("convertor").elements[name];
 }
 
-function autoTab(origin, dest) {
-	if (origin.value.length == origin.maxLength) {
+function autoTab(origin, dest, maxLength) {
+	if (origin.value.length == maxLength) {
 		dest.select();
 	}
 }
@@ -53,7 +53,6 @@ function getMax(name) {
 }
 
 function markError(field, bool) {
-	// field.className = field.className;
 	if (bool) {
 		field.className = field.className.indexOf('error') == -1 ? field.className += " error" : field.className;
 	} else {
@@ -79,20 +78,6 @@ function validateField(field) {
 	}
 
 	markError(field, !/^[0-9]{1,3}$/.test(field.value) || !validateValue(field.value, getMax(field.name)));
-
-	// var M = getElement(field.substr(0,3) + "CoordM");
-	// var S = getElement(field.substr(0,3) + "CoordS");
-	// var rowValidity = validateRow(field.substr(0,3));
-
-	// if (!rowValidity) {
-	// 	markError(M, M.value != 0);
-	// 	markError(S, S.value != 0);
-	// } else if (rowValidity) {
-	// 	markError(M, !validateValue(M.value, 59));
-	// 	markError(S, !validateValue(S.value, 59));
-	// }
-
-	// markError(getElement(field), !/^[0-9]{1,3}$/.test(getElement(field).value) || !validateValue(getElement(field).value, getMax(field)));
 }
 
 function validateRow(row) {

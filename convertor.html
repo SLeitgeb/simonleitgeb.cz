@@ -14,13 +14,15 @@
             <div id="header">
                 <div class="main-menu">
                     <h1 id="name">Šimon Leitgeb</h1>
-                    <div id="menu">
-                        <a href="index.html">DOMŮ</a>
-                        <a href="prace.html">PRÁCE</a>
-                        <a href="mhd.html">MAPA MHD</a>
-                        <a href="convertor.html">KONVERTOR</a>
-                        <a href="#">KONTAKT</a>
-                    </div>
+                    <nav class="nav">
+                        <ul class="nav-list">
+                            <li class="nav-item"><a href="index.html">DOMŮ</a></li>
+                            <li class="nav-item"><a href="prace.html">PRÁCE</a></li>
+                            <li class="nav-item"><a href="mhd.html">MAPA MHD</a></li>
+                            <li class="nav-item"><a href="convertor.html">KONVERTOR</a></li>
+                            <li class="nav-item"><a href="#">KONTAKT</a></li>
+                        </ul>
+                    </nav>
                 </div>
             </div>
             <div class="main clearfix">
@@ -32,9 +34,9 @@
                                 <option value="1">S</option>
                                 <option value="-1">J</option>
                             </select>
-                            <input type="number" name="LatCoordD" class="coord D" onchange="validateField(this)" onInput="autoTab(this, document.convertor.LatCoordM)" maxlength="2">°
-                            <input type="number" name="LatCoordM" class="coord" onchange="validateField(this)" onInput="autoTab(this, document.convertor.LatCoordS)" maxlength="2">'
-                            <input type="number" name="LatCoordS" class="coord" onchange="validateField(this)" onInput="autoTab(this, document.convertor.LonCoordD)" maxlength="2">"</td>
+                            <input type="number" name="LatCoordD" class="coord D" onchange="validateField(this)" onInput="autoTab(this, document.convertor.LatCoordM, 2)">°
+                            <input type="number" name="LatCoordM" class="coord" onchange="validateField(this)" onInput="autoTab(this, document.convertor.LatCoordS, 2)">'
+                            <input type="number" name="LatCoordS" class="coord" onchange="validateField(this)" onInput="autoTab(this, document.convertor.LonCoordD, 2)">"</td>
                         </tr>
                         <tr>
                             <td><p>Zeměpisná délka: </p></td>
@@ -42,9 +44,9 @@
                                 <option value="1">V</option>
                                 <option value="-1">Z</option>
                             </select>
-                            <input type="number" name="LonCoordD" class="coord D" onchange="validateField(this)" onInput="autoTab(this, document.convertor.LonCoordM)" maxlength="3">°
-                            <input type="number" name="LonCoordM" class="coord" onchange="validateField(this)" onInput="autoTab(this, document.convertor.LonCoordS)" maxlength="2">'
-                            <input type="number" name="LonCoordS" class="coord" onchange="validateField(this)" maxlength="2">"</td>
+                            <input type="number" name="LonCoordD" class="coord D" onchange="validateField(this)" onInput="autoTab(this, document.convertor.LonCoordM, 3)">°
+                            <input type="number" name="LonCoordM" class="coord" onchange="validateField(this)" onInput="autoTab(this, document.convertor.LonCoordS, 2)">'
+                            <input type="number" name="LonCoordS" class="coord" onchange="validateField(this)">"</td>
                         </tr>
                     </table>
                     <input type="submit" name="submit" class="coord button">
@@ -53,7 +55,7 @@
                         <p id="result"></p>                        
                     </div>
                 </form>
-                <img id="wmsPlot" src="" alt="WMS coordinates plot" style="display:none;margin-left:auto;margin-right:auto">
+                <img id="wmsPlot" src="http://geoportal.cuzk.cz/WMS_ZM50_PUB/service.svc/get?LAYERS=GR_ZM50&amp;TRANSPARENT=TRUE&amp;FORMAT=image%2Fpng&amp;VERSION=1.3.0&amp;EXCEPTIONS=XML&amp;SERVICE=WMS&amp;REQUEST=GetMap&amp;STYLES=&amp;CRS=EPSG%3A4326&amp;_OLSALT=0.1830467802938074&amp;BBOX=49.208330000000004,16.579169999999998,49.25833,16.65417&amp;WIDTH=500&amp;HEIGHT=500" alt="WMS coordinates plot" style="display:none;margin-left:auto;margin-right:auto">
             </div>
             <div id="footer">
                 <p id="copyright">&copy; Šimon Leitgeb 2015</p>
@@ -61,5 +63,6 @@
             </div>
         </div>
         <script type="text/javascript" src="convert_coordinates.js"></script>
+        <script type="text/javascript" src="mobile-layout.js"></script>
     </body>
 </html>
