@@ -16,13 +16,15 @@ function toggleClass(elem, className) {
     }
 }
 
-var mobile = document.createElement('div');
-mobile.className = 'nav-mobile';
-document.querySelector('nav').appendChild(mobile);
+$(function() {
+	var mobile = document.createElement('div');
+	mobile.className = 'nav-mobile';
+	document.querySelector('nav').appendChild(mobile);
 
-var mobileNav = document.querySelector('.nav-mobile');
-var toggle = document.querySelector('.nav-list');
-mobileNav.onclick = function() {
-	toggleClass(this, 'nav-mobile-open');
-	toggleClass(toggle, 'nav-active');
-}
+	var mobileNav = document.querySelector('.nav-mobile');
+	var toggle = document.querySelector('.nav-list');
+	mobileNav.onclick = function() {
+		toggleClass(this, 'nav-mobile-open');
+		toggleClass(toggle, 'nav-active');
+	};
+});

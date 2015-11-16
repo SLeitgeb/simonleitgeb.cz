@@ -301,4 +301,8 @@ input::-webkit-inner-spin-button {
         width: auto;
         height: auto;
     }
+
+    #footer #contact {
+        display: none;
+    }
 }
