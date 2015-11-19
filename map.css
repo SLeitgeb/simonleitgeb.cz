@@ -15,3 +15,16 @@
 .container {
 	height: 100%;
 }
+
+.leaflet-div-icon {
+	border-radius: 50%;
+	border: none;
+	display: table;
+}
+
+h5 {
+	display: table-cell;
+	text-align: center;
+	padding-top: 2px;
+    max-width: 18px;
+}
