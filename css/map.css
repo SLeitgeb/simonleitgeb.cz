@@ -1,0 +1,30 @@
+#map {
+	height: 100%;
+	width: 100%;
+}
+
+.map-container.main {
+	width: 100%;
+	height: calc(100% - 8.25em);
+	padding: 0;
+    padding-bottom: 3.25em;
+    padding-top: 5em;
+	max-width: none;
+}
+
+.container {
+	height: 100%;
+}
+
+.leaflet-div-icon {
+	border-radius: 50%;
+	border: none;
+	display: table;
+}
+
+h5 {
+	display: table-cell;
+	text-align: center;
+	padding-top: 2px;
+    max-width: 18px;
+}
