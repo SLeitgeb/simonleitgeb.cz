@@ -5,9 +5,8 @@
 
 .map-container.main {
 	width: 100%;
-	height: calc(100% - 8.25em);
+	height: calc(100% - 5em);
 	padding: 0;
-    padding-bottom: 3.25em;
     padding-top: 5em;
 	max-width: none;
 }
@@ -27,4 +26,8 @@ h5 {
 	text-align: center;
 	padding-top: 2px;
     max-width: 18px;
+}
+
+#footer {
+	display: none;
 }
