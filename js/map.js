@@ -151,17 +151,21 @@ var trafficRoutes = L.geoJson([], {
 	}
 });
 
+function parseResponse(data) {
+	trafficMarkers.clearLayers();
+	trafficNumbers.clearLayers();
+    $(data.features).each(function(key, data) {
+        trafficNumbers.addData(data);
+        trafficMarkers.addData(data);
+    });
+}
+
 (function renderTraffic() {
 	$.ajax({
-		dataType: "json",
+		dataType: "jsonp",
 		url: "http://bmhd.simonleitgeb.cz/poloha.json",
 		success: function(data) {
-			trafficMarkers.clearLayers();
-			trafficNumbers.clearLayers();
-		    $(data.features).each(function(key, data) {
-		        trafficNumbers.addData(data);
-		        trafficMarkers.addData(data);
-		    });
+			console.log(data);
 		},
 		complete: function() {
 			setTimeout(renderTraffic, 5000);
