@@ -179,7 +179,7 @@ dataType: "json",
 url: "data/routes.geojson",
 success: function(data) {
     $(data.features).each(function(key, data) {
-        trafficRoutes.addData(data);
+        // trafficRoutes.addData(data);
     });
 },
 complete: function() {

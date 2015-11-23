@@ -91,7 +91,7 @@
 			"file": "js/map.js",
 			"settings":
 			{
-				"buffer_size": 6567,
+				"buffer_size": 6570,
 				"line_ending": "Unix"
 			}
 		},
@@ -417,7 +417,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 3,
 					"type": "text"
 				},
 				{
@@ -447,7 +447,7 @@
 						"translation.y": 1148.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 2,
 					"type": "text"
 				},
 				{
@@ -472,11 +472,11 @@
 							"syntax": "Packages/CSS/CSS.tmLanguage",
 							"translate_tabs_to_spaces": false
 						},
-						"translation.x": -0.0,
+						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 1,
 					"type": "text"
 				}
 			]
@@ -491,15 +491,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 6567,
+						"buffer_size": 6570,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								4883,
-								4883
+								5171,
+								5171
 							]
 						],
 						"settings":
@@ -509,10 +509,10 @@
 							"word_wrap": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 2268.0,
+						"translation.y": 2996.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 3,
+					"stack_index": 0,
 					"type": "text"
 				},
 				{
@@ -622,7 +622,7 @@
 		[
 			[
 				"",
-				"~/prace/Projects/cordova/vectorWmsOtn.sublime-project"
+				"~/private/com.rhcloud.bmhd-geosimon/openshift api.sublime-project"
 			]
 		],
 		"width": 380.0
@@ -636,7 +636,7 @@
 		],
 		"width": 0.0
 	},
-	"selected_group": 0,
+	"selected_group": 1,
 	"settings":
 	{
 	},
