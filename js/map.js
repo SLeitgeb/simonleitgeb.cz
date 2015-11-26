@@ -78,6 +78,18 @@ var OSMlayer = L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
     attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
 });
 
+var GMaps = L.tileLayer('http://{s}.google.com/vt/lyrs=m&x={x}&y={y}&z={z}',{
+    maxZoom: 20,
+    subdomains:['mt0','mt1','mt2','mt3']
+});
+
+var uzavirky = L.tileLayer.wms("http://gis.brno.cz/arcgis/rest/services/PUBLIC/uzavirky/MapServer", {
+    layers: 'Uzavírky (schválené)',
+    format: 'image/png',
+    transparent: false,
+    attribution: "Město Brno"
+});
+
 var WMSHillshade = L.tileLayer.wms("http://geoportal.cuzk.cz/WMS_TEREN/WMService.aspx", {
 	layers: 'GR_TEREN',
 	format: 'image/png',
@@ -103,7 +115,9 @@ var trafficMarkers = L.geoJson([], {
 		if (val < 89) {return L.rotatedMarker(latlng, {icon: busIcon, angle: rotate });} else
 		if (val < 100) {return L.rotatedMarker(latlng, {icon: nbusIcon, angle: rotate });} else
 		{return L.rotatedMarker(latlng, {icon: trafficIcon, angle: rotate });}
-	}
+	},
+
+	attribution: 'Šotoris'
 });
 
 var trafficNumbers = L.geoJson([], {
@@ -205,13 +219,13 @@ var map = L.map ("map", {
 });
 
 var baseLayers = {
-	"OpenStreetMap": OSMlayer
+	"OpenStreetMap": OSMlayer,
+	"Google Maps": GMaps
 };
 
 var overlays = {
-	"Hillshade": WMSHillshade,
-	"Klad ZM10": KladZM10,
 	"Poloha MHD": traffic,
+	"Hillshade": WMSHillshade
 	// "Trasy MHD": trafficRoutes
 	// "Trasa": trasicka
 };
