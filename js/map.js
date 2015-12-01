@@ -2,6 +2,10 @@ var routeRefCollection = [];
 
 var routeLabelRef = {};
 
+function updateFeature() {
+	
+}
+
 function onEachMarker(feature, layer) {
 	var popupContent = "<h3>" + feature.properties.routeLabel + " &rarr; " + feature.properties.headsign + "</h3>";
 	layer.bindPopup(popupContent);
@@ -166,12 +170,23 @@ var trafficRoutes = L.geoJson([], {
 });
 
 function parseResponse(data) {
+	if !trafficMarkers {
+		$(data.features).each(function(key, data) {
+        	trafficNumbers.addData(data);
+        	trafficMarkers.addData(data);
+    	});
+	} else {
+		$(data.features).each(function(key, data) {
+			trafficMarkers._layers[Object.keys(trafficMarkers._layers)[0]].setLatLng()
+		});
+	}
 	trafficMarkers.clearLayers();
 	trafficNumbers.clearLayers();
-    $(data.features).each(function(key, data) {
-        trafficNumbers.addData(data);
-        trafficMarkers.addData(data);
-    });
+	$(data.features).each(function(key, data) {
+		console.log(data);
+	    trafficNumbers.addData(data);
+    	trafficMarkers.addData(data);
+	});
 }
 
 (function renderTraffic() {

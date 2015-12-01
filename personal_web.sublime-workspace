@@ -67,7 +67,7 @@
 			"file": "mhd.html",
 			"settings":
 			{
-				"buffer_size": 2193,
+				"buffer_size": 2601,
 				"line_ending": "Unix"
 			}
 		},
@@ -91,7 +91,7 @@
 			"file": "js/map.js",
 			"settings":
 			{
-				"buffer_size": 6570,
+				"buffer_size": 7296,
 				"line_ending": "Unix"
 			}
 		},
@@ -187,6 +187,7 @@
 	],
 	"file_history":
 	[
+		"/home/sleitgeb/.config/sublime-text-3/Packages/User/Preferences.sublime-settings",
 		"/home/sleitgeb/private/com.rhcloud.bmhd-geosimon/.openshift/README.md",
 		"/home/sleitgeb/private/cz.simonleitgeb/simonleitgeb.cz/js/map.js",
 		"/home/sleitgeb/.config/sublime-text-3/Packages/ColorPicker/ColorPicker.sublime-settings",
@@ -201,7 +202,6 @@
 		"/home/sleitgeb/private/cz.simonleitgeb/simonleitgeb.cz/prace.html",
 		"/home/sleitgeb/private/cz.simonleitgeb/simonleitgeb.cz/mhd.html",
 		"/home/sleitgeb/private/cz.simonleitgeb/simonleitgeb.cz/index.html",
-		"/home/sleitgeb/.config/sublime-text-3/Packages/User/Preferences.sublime-settings",
 		"/home/sleitgeb/.config/sublime-text-3/Packages/User/ColorPicker.sublime-settings",
 		"/home/sleitgeb/.config/sublime-text-3/Packages/Default/Default (Linux).sublime-keymap",
 		"/home/sleitgeb/private/cz.simonleitgeb/simonleitgeb.cz/brno.png",
@@ -239,6 +239,8 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"../../bower_components/leaflet.markercluster/",
+			"../dist",
 			"1",
 			"0",
 			"1",
@@ -396,15 +398,23 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2193,
+						"buffer_size": 2601,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								924,
-								924
+								576,
+								576
+							],
+							[
+								1062,
+								1062
+							],
+							[
+								1177,
+								1177
 							]
 						],
 						"settings":
@@ -417,7 +427,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 1,
 					"type": "text"
 				},
 				{
@@ -444,7 +454,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 1148.0,
+						"translation.y": 13706.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 3,
@@ -491,15 +501,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 6570,
+						"buffer_size": 7296,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								5171,
-								5171
+								5354,
+								5354
 							]
 						],
 						"settings":
@@ -509,10 +519,10 @@
 							"word_wrap": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 1092.0,
+						"translation.y": 2478.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 0,
 					"type": "text"
 				},
 				{
@@ -636,7 +646,7 @@
 		],
 		"width": 0.0
 	},
-	"selected_group": 0,
+	"selected_group": 1,
 	"settings":
 	{
 	},
