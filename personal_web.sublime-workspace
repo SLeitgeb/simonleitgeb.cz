@@ -67,7 +67,7 @@
 			"file": "mhd.html",
 			"settings":
 			{
-				"buffer_size": 2601,
+				"buffer_size": 2616,
 				"line_ending": "Unix"
 			}
 		},
@@ -398,23 +398,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2601,
+						"buffer_size": 2616,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								576,
-								576
-							],
-							[
-								1062,
-								1062
-							],
-							[
-								1177,
-								1177
+								2450,
+								2450
 							]
 						],
 						"settings":
@@ -424,10 +416,10 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 364.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 0,
 					"type": "text"
 				},
 				{
@@ -519,10 +511,10 @@
 							"word_wrap": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 2478.0,
+						"translation.y": 2506.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 1,
 					"type": "text"
 				},
 				{
@@ -646,7 +638,7 @@
 		],
 		"width": 0.0
 	},
-	"selected_group": 1,
+	"selected_group": 0,
 	"settings":
 	{
 	},

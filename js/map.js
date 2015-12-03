@@ -94,19 +94,6 @@ var uzavirky = L.tileLayer.wms("http://gis.brno.cz/arcgis/rest/services/PUBLIC/u
     attribution: "Město Brno"
 });
 
-var WMSHillshade = L.tileLayer.wms("http://geoportal.cuzk.cz/WMS_TEREN/WMService.aspx", {
-	layers: 'GR_TEREN',
-	format: 'image/png',
-	transparent: true,
-	opacity: 0.3
-});
-
-var KladZM10 = L.tileLayer.wms("http://geoportal.cuzk.cz/WMS_KLADY/WMService.aspx", {
-	layers: 'GP_ZM10',
-	format: 'image/png',
-	transparent: true
-});
-
 var trafficMarkers = L.geoJson([], {
 	onEachFeature: onEachMarker,
 
@@ -170,20 +157,19 @@ var trafficRoutes = L.geoJson([], {
 });
 
 function parseResponse(data) {
-	if !trafficMarkers {
-		$(data.features).each(function(key, data) {
-        	trafficNumbers.addData(data);
-        	trafficMarkers.addData(data);
-    	});
-	} else {
-		$(data.features).each(function(key, data) {
-			trafficMarkers._layers[Object.keys(trafficMarkers._layers)[0]].setLatLng()
-		});
-	}
+// 	if !trafficMarkers {
+// 		$(data.features).each(function(key, data) {
+//         	trafficNumbers.addData(data);
+//         	trafficMarkers.addData(data);
+//     	});
+// 	} else {
+// 		$(data.features).each(function(key, data) {
+// 			trafficMarkers._layers[Object.keys(trafficMarkers._layers)[0]].setLatLng()
+// 		});
+// 	}
 	trafficMarkers.clearLayers();
 	trafficNumbers.clearLayers();
 	$(data.features).each(function(key, data) {
-		console.log(data);
 	    trafficNumbers.addData(data);
     	trafficMarkers.addData(data);
 	});
@@ -230,7 +216,7 @@ complete: function() {
 var map = L.map ("map", {
 	center: [49.2, 16.6],
 	zoom: 16,
-	layers: [OSMlayer, traffic]
+	layers: [GMaps, traffic]
 });
 
 var baseLayers = {
@@ -240,20 +226,19 @@ var baseLayers = {
 
 var overlays = {
 	"Poloha MHD": traffic,
-	"Hillshade": WMSHillshade
+	"Uzavírky": uzavirky
 	// "Trasy MHD": trafficRoutes
-	// "Trasa": trasicka
 };
 
 L.control.layers(baseLayers, overlays).addTo(map);
 
-function locate() {
+(function locate() {
 	map.locate({
 		watch: true,
 		setView: true,
 		maxZoom: 15
 	});	
-};
+})();
 
 // L.circleMarker([49.20301, 16.64184], {
 // 	radius: 3
