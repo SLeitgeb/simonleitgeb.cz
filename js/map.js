@@ -214,8 +214,8 @@ complete: function() {
 }).error(function() {});
 
 var map = L.map ("map", {
-	center: [49.2, 16.6],
-	zoom: 16,
+	center: [49.195, 16.61],
+	zoom: 15,
 	zoomControl: false,
 	layers: [GMaps, traffic]
 });
