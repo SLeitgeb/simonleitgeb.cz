@@ -232,13 +232,28 @@ var overlays = {
 
 L.control.layers(baseLayers, overlays).addTo(map);
 
-(function locate() {
-	map.locate({
-		watch: true,
-		setView: true,
-		maxZoom: 15
-	});	
-})();
+function toggleGeolocation(event) {
+	if (this.classList.contains("watching")) {
+		map.stopLocate();
+	} else {
+		map.locate({
+	  		watch: true,
+	  		setView: true,
+	  		maxZoom: 15
+	  	});
+	}
+  	this.classList.toggle("watching");
+}
+
+document.getElementById("geolocationSwitch").addEventListener("click", toggleGeolocation);
+
+// (function locate() {
+// 	map.locate({
+// 		watch: true,
+// 		setView: true,
+// 		maxZoom: 15
+// 	});	
+// })();
 
 // L.circleMarker([49.20301, 16.64184], {
 // 	radius: 3

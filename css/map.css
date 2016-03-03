@@ -21,6 +21,34 @@
 	display: table;
 }
 
+#overlay {
+	position: absolute;
+	bottom: 0.5em;
+	left: 0.5em;
+}
+
+button.switch.watching {
+	background-color: #efefef;
+}
+
+button.switch:not(.watching) svg #center {
+	fill: none;
+}
+
+button.switch {
+	box-shadow: 0 1px 10px rgba(0,0,0,0.4);
+	background-color: #fff;
+	border: 0;
+	/*border: 1px solid #888;*/
+	border-radius: 50%;
+	padding: 5px 5px 2px 5px;
+	margin: 0;
+}
+
+button.watching svg path {
+    fill: #333;
+}
+
 h5 {
 	display: table-cell;
 	text-align: center;
