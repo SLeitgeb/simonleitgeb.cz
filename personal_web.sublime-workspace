@@ -67,7 +67,7 @@
 			"file": "mhd.html",
 			"settings":
 			{
-				"buffer_size": 2467,
+				"buffer_size": 3088,
 				"line_ending": "Unix"
 			}
 		},
@@ -75,7 +75,7 @@
 			"file": "css/style.css",
 			"settings":
 			{
-				"buffer_size": 5049,
+				"buffer_size": 5077,
 				"line_ending": "Unix"
 			}
 		},
@@ -83,7 +83,7 @@
 			"file": "css/map.css",
 			"settings":
 			{
-				"buffer_size": 734,
+				"buffer_size": 1102,
 				"line_ending": "Unix"
 			}
 		},
@@ -91,7 +91,7 @@
 			"file": "js/map.js",
 			"settings":
 			{
-				"buffer_size": 7144,
+				"buffer_size": 7397,
 				"line_ending": "Unix"
 			}
 		},
@@ -99,7 +99,7 @@
 			"file": "js/mobile-layout.js",
 			"settings":
 			{
-				"buffer_size": 1025,
+				"buffer_size": 936,
 				"line_ending": "Unix"
 			}
 		}
@@ -111,8 +111,8 @@
 	"build_varint": "",
 	"command_palette":
 	{
-		"height": 336.0,
-		"last_filter": "packagec:",
+		"height": 334.0,
+		"last_filter": "",
 		"selected_items":
 		[
 			[
@@ -191,10 +191,14 @@
 	[
 		"/home/sleitgeb/private/cz.simonleitgeb/simonleitgeb.cz",
 		"/home/sleitgeb/private/cz.simonleitgeb/simonleitgeb.cz/css",
+		"/home/sleitgeb/private/cz.simonleitgeb/simonleitgeb.cz/icons",
+		"/home/sleitgeb/private/cz.simonleitgeb/simonleitgeb.cz/icons/templates",
 		"/home/sleitgeb/private/cz.simonleitgeb/simonleitgeb.cz/js"
 	],
 	"file_history":
 	[
+		"/home/sleitgeb/private/cz.simonleitgeb/simonleitgeb.cz/icons/templates/nav-icon-circle.html",
+		"/home/sleitgeb/private/cz.simonleitgeb/simonleitgeb.cz/icons/templates/nav-icon-arrow.html",
 		"/home/sleitgeb/private/cz.simonleitgeb/simonleitgeb.cz/js/convert_coordinates.js",
 		"/home/sleitgeb/prace/Projects/temp/cordova/vectorWmsOtn/www/hslayers_mobile.html",
 		"/home/sleitgeb/prace/Projects/cordova/vectorWmsOtn/www/index.html",
@@ -254,6 +258,10 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"map",
+			"zoom",
+			"watching",
+			"\n    ",
 			"0",
 			"locate",
 			"../../bower_components/leaflet.markercluster/",
@@ -392,8 +400,8 @@
 						"selection":
 						[
 							[
-								1167,
-								1167
+								16,
+								16
 							]
 						],
 						"settings":
@@ -403,7 +411,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 228.0,
+						"translation.y": 15.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 5,
@@ -415,15 +423,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2467,
+						"buffer_size": 3088,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2005,
-								2005
+								1409,
+								1409
 							]
 						],
 						"settings":
@@ -433,10 +441,10 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 423.0,
+						"translation.y": 377.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 4,
 					"type": "text"
 				},
 				{
@@ -445,15 +453,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 5049,
+						"buffer_size": 5077,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								193,
-								193
+								4947,
+								4947
 							]
 						],
 						"settings":
@@ -463,7 +471,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 1665.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 2,
@@ -475,15 +483,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 734,
+						"buffer_size": 1102,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								307,
-								307
+								355,
+								355
 							]
 						],
 						"settings":
@@ -495,7 +503,7 @@
 						"translation.y": 180.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 1,
 					"type": "text"
 				}
 			]
@@ -510,15 +518,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 7144,
+						"buffer_size": 7397,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								6729,
-								6729
+								6315,
+								6315
 							]
 						],
 						"settings":
@@ -528,10 +536,10 @@
 							"word_wrap": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 3765.0,
+						"translation.y": 3375.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 3,
+					"stack_index": 0,
 					"type": "text"
 				},
 				{
@@ -540,15 +548,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1025,
+						"buffer_size": 936,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1025,
-								1025
+								393,
+								393
 							]
 						],
 						"settings":
@@ -558,10 +566,10 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 180.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 4,
+					"stack_index": 3,
 					"type": "text"
 				}
 			]
@@ -655,7 +663,7 @@
 		],
 		"width": 0.0
 	},
-	"selected_group": 0,
+	"selected_group": 1,
 	"settings":
 	{
 	},

@@ -25,6 +25,10 @@
 	bottom: 0;
 }
 
+* {
+	outline: none;
+}
+
 button#geolocationSwitch {
 	position: absolute;
 	bottom: 0.5em;
