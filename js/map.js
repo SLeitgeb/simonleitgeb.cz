@@ -184,7 +184,7 @@ function parseResponse(data) {
 		},
 		complete: function() {
 			setTimeout(renderTraffic, 5000);
-			console.log("Rendering traffic again.")
+			// console.log("Rendering traffic again.")
 		}
 	}).error(function() {});
 })();
@@ -216,6 +216,7 @@ complete: function() {
 var map = L.map ("map", {
 	center: [49.2, 16.6],
 	zoom: 16,
+	zoomControl: false,
 	layers: [GMaps, traffic]
 });
 
@@ -230,10 +231,15 @@ var overlays = {
 	// "Trasy MHD": trafficRoutes
 };
 
+var zoom = L.control.zoom({
+	position: 'bottomleft'
+});
+
+zoom.addTo(map);
 L.control.layers(baseLayers, overlays).addTo(map);
 
 function toggleGeolocation(event) {
-	if (this.classList.contains("watching")) {
+	if (this.classList.contains("active")) {
 		map.stopLocate();
 	} else {
 		map.locate({
@@ -242,7 +248,7 @@ function toggleGeolocation(event) {
 	  		maxZoom: 15
 	  	});
 	}
-  	this.classList.toggle("watching");
+  	this.classList.toggle("active");
 }
 
 document.getElementById("geolocationSwitch").addEventListener("click", toggleGeolocation);

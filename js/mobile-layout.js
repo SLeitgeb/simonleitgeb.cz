@@ -17,7 +17,7 @@ function toggleClass(elem, className) {
 }
 
 $(function() {
-	var mobile = document.createElement('div');
+	var mobile = document.createElement('button');
 	mobile.className = 'nav-mobile';
 	document.querySelector('nav').appendChild(mobile);
 
