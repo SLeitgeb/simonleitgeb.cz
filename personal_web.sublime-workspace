@@ -83,7 +83,7 @@
 			"file": "css/map.css",
 			"settings":
 			{
-				"buffer_size": 1102,
+				"buffer_size": 1125,
 				"line_ending": "Unix"
 			}
 		},
@@ -483,15 +483,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1102,
+						"buffer_size": 1125,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								355,
-								355
+								279,
+								279
 							]
 						],
 						"settings":
@@ -503,7 +503,7 @@
 						"translation.y": 180.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 0,
 					"type": "text"
 				}
 			]
@@ -536,10 +536,10 @@
 							"word_wrap": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 3375.0,
+						"translation.y": 3840.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 1,
 					"type": "text"
 				},
 				{
@@ -649,7 +649,7 @@
 		[
 			[
 				"",
-				"~/prace/Projects/cordova/vectorWmsOtn.sublime-project"
+				"~/private/com.rhcloud.bmhd-geosimon/openshift api.sublime-project"
 			]
 		],
 		"width": 380.0
@@ -663,7 +663,7 @@
 		],
 		"width": 0.0
 	},
-	"selected_group": 1,
+	"selected_group": 0,
 	"settings":
 	{
 	},
