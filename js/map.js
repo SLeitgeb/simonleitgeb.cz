@@ -128,6 +128,31 @@ var trafficNumbers = L.geoJson([], {
 
 var traffic = L.layerGroup([trafficMarkers, trafficNumbers]);
 
+var map = L.map ("map", {
+	center: [49.195, 16.61],
+	zoom: 15,
+	zoomControl: false,
+	layers: [GMaps, traffic]
+});
+
+var baseLayers = {
+	"OpenStreetMap": OSMlayer,
+	"Google Maps": GMaps
+};
+
+var overlays = {
+	"Poloha MHD": traffic,
+	"Uzavírky": uzavirky
+	// "Trasy MHD": trafficRoutes
+};
+
+var zoom = L.control.zoom({
+	position: 'bottomleft'
+});
+
+zoom.addTo(map);
+L.control.layers(baseLayers, overlays).addTo(map);
+
 var trafficRoutes = L.geoJson([], {
 	onEachFeature: onEachRoute,
 
@@ -175,6 +200,32 @@ function parseResponse(data) {
 	});
 }
 
+function renderTraffic() {
+	var url = '';
+	if (screen.width < 800) {
+		var latmax = map.getBounds()._northEast["lat"];
+		var lngmax = map.getBounds()._northEast["lng"];
+		var latmin = map.getBounds()._southWest["lat"];
+		var lngmin = map.getBounds()._southWest["lng"];
+		url = 'http://bmhdapi-geosimon.rhcloud.com/vehicles.json?latmax=' + latmax + '&lonmax=' + lngmax + '&latmin=' + latmin + '&lonmin=' + lngmin + '&callback=parseResponse';
+	} else {
+		url = 'http://bmhdapi-geosimon.rhcloud.com/vehicles.json?callback=parseResponse';
+	}
+	$.ajax({
+		type: "get",
+		dataType: "jsonp",
+		jsonp: "parseResponse",
+		url: url,
+		// url: "http://bmhd.simonleitgeb.cz/poloha.json",
+		success: function(response) {
+			console.log(response);
+		},
+		complete: function() {
+			console.log("Rendering traffic once.");
+		}
+	}).error(function() {});
+}
+
 (function renderTraffic() {
 	var url = '';
 	if (screen.width < 800) {
@@ -182,7 +233,7 @@ function parseResponse(data) {
 		var lngmax = map.getBounds()._northEast["lng"];
 		var latmin = map.getBounds()._southWest["lat"];
 		var lngmin = map.getBounds()._southWest["lng"];
-		url = 'http://bmhdapi-geosimon.rhcloud.com/vehicles.json?latmax=' + latmax + '&lonmax=' + lonmax + '&latmin=' + latmin + '&lonmin=' + lonmin + '&callback=parseResponse';
+		url = 'http://bmhdapi-geosimon.rhcloud.com/vehicles.json?latmax=' + latmax + '&lonmax=' + lngmax + '&latmin=' + latmin + '&lonmin=' + lngmin + '&callback=parseResponse';
 	} else {
 		url = 'http://bmhdapi-geosimon.rhcloud.com/vehicles.json?callback=parseResponse';
 	}
@@ -197,7 +248,7 @@ function parseResponse(data) {
 		},
 		complete: function() {
 			setTimeout(renderTraffic, 5000);
-			// console.log("Rendering traffic again.")
+			console.log("Rendering traffic again.");
 		}
 	}).error(function() {});
 })();
@@ -240,31 +291,6 @@ function parseResponse(data) {
 // }
 // }).error(function() {});
 
-var map = L.map ("map", {
-	center: [49.195, 16.61],
-	zoom: 15,
-	zoomControl: false,
-	layers: [GMaps, traffic]
-});
-
-var baseLayers = {
-	"OpenStreetMap": OSMlayer,
-	"Google Maps": GMaps
-};
-
-var overlays = {
-	"Poloha MHD": traffic,
-	"Uzavírky": uzavirky
-	// "Trasy MHD": trafficRoutes
-};
-
-var zoom = L.control.zoom({
-	position: 'bottomleft'
-});
-
-zoom.addTo(map);
-L.control.layers(baseLayers, overlays).addTo(map);
-
 function toggleGeolocation(event) {
 	if (this.classList.contains("active")) {
 		map.stopLocate();
@@ -283,6 +309,10 @@ function locationSuccess(event) {
 document.getElementById("geolocationSwitch").addEventListener("click", toggleGeolocation);
 
 map.on('locationfound', locationSuccess);
+
+if (screen.width < 800) {
+	map.on('moveend', renderTraffic);
+}
 
 // (function locate() {
 // 	map.locate({
