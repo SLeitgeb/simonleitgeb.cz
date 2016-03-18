@@ -176,11 +176,24 @@ function parseResponse(data) {
 }
 
 (function renderTraffic() {
+	var url = '';
+	if (screen.width < 800) {
+		var latmax = map.getBounds()._northEast["lat"];
+		var lngmax = map.getBounds()._northEast["lng"];
+		var latmin = map.getBounds()._southWest["lat"];
+		var lngmin = map.getBounds()._southWest["lng"];
+		url = 'http://bmhdapi-geosimon.rhcloud.com/vehicles.json?latmax=' + latmax + '&lonmax=' + lonmax + '&latmin=' + latmin + '&lonmin=' + lonmin + '&callback=parseResponse';
+	} else {
+		url = 'http://bmhdapi-geosimon.rhcloud.com/vehicles.json?callback=parseResponse';
+	}
 	$.ajax({
+		type: "get",
 		dataType: "jsonp",
-		url: "http://bmhd.simonleitgeb.cz/poloha.json",
-		success: function(data) {
-			console.log(data);
+		jsonp: "parseResponse",
+		url: url,
+		// url: "http://bmhd.simonleitgeb.cz/poloha.json",
+		success: function(response) {
+			console.log(response);
 		},
 		complete: function() {
 			setTimeout(renderTraffic, 5000);
@@ -189,29 +202,43 @@ function parseResponse(data) {
 	}).error(function() {});
 })();
 
-$.ajax({
-dataType: "json",
-url: "data/routes.geojson",
-success: function(data) {
-    $(data.features).each(function(key, data) {
-        // trafficRoutes.addData(data);
-    });
-},
-complete: function() {
-		for (var len = Object.keys(trafficRoutes._layers).length - 1; len >= 0; len -= 1) {
-		// console.log(len, Object.keys(trafficRoutes._layers));
-		var routeId = Object.keys(trafficRoutes._layers)[len];
-		var routeLabel = trafficRoutes._layers[routeId].feature.properties["@relations"][0].reltags.ref.replace("n", "");
-		// console.log(len, ': ', routeId, ', ', routeLabel);
-		// console.log(!(routeLabel in routeLabelRef));
-		if (!(routeLabel in routeLabelRef)) {
-			routeLabelRef[routeLabel] = [];
-		}
-		routeLabelRef[routeLabel].push(routeId);
-		// console.log(routeId);
-	}
-}
-}).error(function() {});
+// (function renderTraffic() {
+// 	$.ajax({
+// 		dataType: "jsonp",
+// 		url: "http://bmhd.simonleitgeb.cz/poloha.json",
+// 		success: function(data) {
+// 			console.log(data);
+// 		},
+// 		complete: function() {
+// 			setTimeout(renderTraffic, 5000);
+// 			// console.log("Rendering traffic again.")
+// 		}
+// 	}).error(function() {});
+// })();
+
+// $.ajax({
+// dataType: "json",
+// url: "data/routes.geojson",
+// success: function(data) {
+//     $(data.features).each(function(key, data) {
+//         // trafficRoutes.addData(data);
+//     });
+// },
+// complete: function() {
+// 		for (var len = Object.keys(trafficRoutes._layers).length - 1; len >= 0; len -= 1) {
+// 		// console.log(len, Object.keys(trafficRoutes._layers));
+// 		var routeId = Object.keys(trafficRoutes._layers)[len];
+// 		var routeLabel = trafficRoutes._layers[routeId].feature.properties["@relations"][0].reltags.ref.replace("n", "");
+// 		// console.log(len, ': ', routeId, ', ', routeLabel);
+// 		// console.log(!(routeLabel in routeLabelRef));
+// 		if (!(routeLabel in routeLabelRef)) {
+// 			routeLabelRef[routeLabel] = [];
+// 		}
+// 		routeLabelRef[routeLabel].push(routeId);
+// 		// console.log(routeId);
+// 	}
+// }
+// }).error(function() {});
 
 var map = L.map ("map", {
 	center: [49.195, 16.61],
@@ -243,15 +270,19 @@ function toggleGeolocation(event) {
 		map.stopLocate();
 	} else {
 		map.locate({
-	  		watch: true,
-	  		setView: true,
-	  		maxZoom: 15
+	  		watch: true
 	  	});
 	}
   	this.classList.toggle("active");
 }
 
+function locationSuccess(event) {
+	map.panTo([event.latlng["lat"], event.latlng["lng"]]);
+}
+
 document.getElementById("geolocationSwitch").addEventListener("click", toggleGeolocation);
+
+map.on('locationfound', locationSuccess);
 
 // (function locate() {
 // 	map.locate({
