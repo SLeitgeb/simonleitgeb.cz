@@ -7,7 +7,7 @@ function updateFeature() {
 }
 
 function onEachMarker(feature, layer) {
-	var popupContent = "<h3>" + feature.properties.routeLabel + " &rarr; " + feature.properties.headsign + "</h3>";
+	var popupContent = "<h3>" + feature.properties.routeLabel + " (" + feature.properties.vehicleId + ")" + " &rarr; " + feature.properties.headsign + "</h3>";
 	layer.bindPopup(popupContent);
 }
 
