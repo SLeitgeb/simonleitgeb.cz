@@ -292,14 +292,16 @@ function renderTraffic() {
 // }).error(function() {});
 
 function toggleGeolocation(event) {
-	if (this.classList.contains("active")) {
+	if (document.getElementById("geolocationSwitch").classList.contains("active")) {
 		map.stopLocate();
+		map.off("dragstart", toggleGeolocation);
 	} else {
 		map.locate({
 	  		watch: true
 	  	});
+	  	map.on("dragstart", toggleGeolocation);
 	}
-  	this.classList.toggle("active");
+  	document.getElementById("geolocationSwitch").classList.toggle("active");
 }
 
 function locationSuccess(event) {
