@@ -4,12 +4,16 @@
 		"selected_items":
 		[
 			[
-				"d",
-				"display"
+				"get",
+				"getElementById"
 			],
 			[
-				"get",
-				"getRouteLabelIdReference"
+				"toggle",
+				"toggleGeolocation"
+			],
+			[
+				"d",
+				"display"
 			],
 			[
 				"route",
@@ -83,7 +87,7 @@
 			"file": "js/map.js",
 			"settings":
 			{
-				"buffer_size": 9431,
+				"buffer_size": 9598,
 				"line_ending": "Unix"
 			}
 		},
@@ -483,15 +487,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 9431,
+						"buffer_size": 9598,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								317,
-								317
+								8573,
+								8573
 							]
 						],
 						"settings":
@@ -501,7 +505,7 @@
 							"word_wrap": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 4455.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
@@ -607,7 +611,7 @@
 		[
 			[
 				"",
-				"~/private/bmhdapi/bmhdapi.sublime-project"
+				"~/prace/Projects/cordova/vectorWmsOtn.sublime-project"
 			]
 		],
 		"width": 380.0
