@@ -63,7 +63,7 @@
 			"file": "index.html",
 			"settings":
 			{
-				"buffer_size": 3297,
+				"buffer_size": 3769,
 				"line_ending": "Unix"
 			}
 		},
@@ -95,7 +95,7 @@
 			"file": "mhd.html",
 			"settings":
 			{
-				"buffer_size": 3089,
+				"buffer_size": 3570,
 				"line_ending": "Unix"
 			}
 		}
@@ -190,6 +190,7 @@
 	],
 	"file_history":
 	[
+		"/home/sleitgeb/private/cz.simonleitgeb/simonleitgeb.cz/.gitignore",
 		"/home/sleitgeb/private/cz.simonleitgeb/simonleitgeb.cz/mhd.html?47687764",
 		"/home/sleitgeb/private/cz.simonleitgeb/simonleitgeb.cz/js/mobile-layout.js",
 		"/home/sleitgeb/private/cz.simonleitgeb/simonleitgeb.cz/icons/templates/nav-icon-circle.html",
@@ -252,6 +253,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"screen",
 			"webkit",
 			"console.log",
 			"lon",
@@ -389,7 +391,7 @@
 	"groups":
 	[
 		{
-			"selected": 3,
+			"selected": 4,
 			"sheets":
 			[
 				{
@@ -398,15 +400,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 3297,
+						"buffer_size": 3769,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								16,
-								16
+								1194,
+								1194
 							]
 						],
 						"settings":
@@ -416,7 +418,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 15.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 2,
@@ -494,8 +496,8 @@
 						"selection":
 						[
 							[
-								8573,
-								8573
+								2946,
+								2946
 							]
 						],
 						"settings":
@@ -505,10 +507,10 @@
 							"word_wrap": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 4455.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 1,
 					"type": "text"
 				},
 				{
@@ -517,15 +519,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 3089,
+						"buffer_size": 3570,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2141,
-								2141
+								505,
+								505
 							]
 						],
 						"settings":
@@ -538,7 +540,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 0,
 					"type": "text"
 				}
 			]
@@ -611,7 +613,7 @@
 		[
 			[
 				"",
-				"~/prace/Projects/cordova/vectorWmsOtn.sublime-project"
+				"~/private/bmhdapi/bmhdapi.sublime-project"
 			]
 		],
 		"width": 380.0
@@ -633,7 +635,7 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 179.0,
+	"side_bar_width": 185.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{

@@ -221,7 +221,6 @@ function renderTraffic() {
 			console.log(response);
 		},
 		complete: function() {
-			console.log("Rendering traffic once.");
 		}
 	}).error(function() {});
 }
@@ -248,7 +247,6 @@ function renderTraffic() {
 		},
 		complete: function() {
 			setTimeout(renderTraffic, 5000);
-			console.log("Rendering traffic again.");
 		}
 	}).error(function() {});
 })();
