@@ -1,0 +1,40 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+div#container {
+	width: 500px;
+	margin: auto;
+	padding: 1em;
+}
+
+div#population {
+	width: 20em;
+	margin: auto;
+	margin-top: 1em;
+}
+
+div#population p {
+	display: table;
+	min-width: 15em;
+    border-bottom: 2px #3A007E solid;
+	font-family: 'Roboto', sans-serif;
+	font-weight: 700;
+	font-size: 18px;
+	color: #3A007E;
+	margin: auto;
+}
+
+div#population p span {
+	display: table-cell;
+}
+
+span#left {
+	text-align: left;
+	padding-right: 1em;
+}
+
+span#right {
+	text-align: right;
+}

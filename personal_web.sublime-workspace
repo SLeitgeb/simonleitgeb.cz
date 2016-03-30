@@ -87,7 +87,7 @@
 			"file": "js/map.js",
 			"settings":
 			{
-				"buffer_size": 9598,
+				"buffer_size": 9511,
 				"line_ending": "Unix"
 			}
 		},
@@ -489,15 +489,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 9598,
+						"buffer_size": 9511,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2946,
-								2946
+								7190,
+								7190
 							]
 						],
 						"settings":
@@ -507,7 +507,7 @@
 							"word_wrap": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 3195.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 1,
@@ -526,8 +526,8 @@
 						"selection":
 						[
 							[
-								505,
-								505
+								3464,
+								3464
 							]
 						],
 						"settings":
@@ -537,7 +537,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 630.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
