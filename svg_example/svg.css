@@ -1,12 +1,11 @@
-svg path:hover {
-	fill: red !important;
-	fill-opacity: 0.75;
-	/*-webkit-filter: drop-shadow( 0 0 5px #000);
-	filter: drop-shadow( -5px -5px 5px #000);*/
-	/*filter: url('#drop-shadow');*/
-}
-
 svg path {
 	-webkit-transition: fill 0.5s, fill-opacity 0.5s;
 	transition: fill 0.5s, fill-opacity 0.5s;
+}
+
+@media screen and (min-device-width: 800px) {
+	svg path:hover {
+		fill: red !important;
+		fill-opacity: 0.75;
+	}
 }

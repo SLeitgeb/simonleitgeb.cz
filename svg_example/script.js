@@ -1,20 +1,23 @@
 var populations = [];
 var colorScheme = ['#ffffcc','#a1dab4','#41b6c4','#2c7fb8','#253494'];
 
-window.addEventListener("load", function() {
+
+document.getElementById("districts").addEventListener("load", function() {
 	var d = document.getElementById("districts");
+	// svgdocument = d.getSVGDocument();
 	svgdocument = d.contentDocument;
 
 	var linkElm = svgdocument.createElementNS("http://www.w3.org/1999/xhtml", "link");
 	linkElm.setAttribute("href", "svg.css");
 	linkElm.setAttribute("type", "text/css");
 	linkElm.setAttribute("rel", "stylesheet");
-	svgdocument.getElementById("districts").appendChild(linkElm);
+	svgdocument.getElementsByTagName("svg")[0].appendChild(linkElm);
 
 	paths = svgdocument.getElementsByTagName("path");
 
 	for (i = 0; i < paths.length; i++) {
 		populations.push(paths[i].getAttribute("data-ob11"));
+		paths[i].addEventListener("touchend", parseClick, false);
 		paths[i].addEventListener("click", parseClick, false);
 	}
 }, false);
