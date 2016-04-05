@@ -87,7 +87,7 @@
 			"file": "js/map.js",
 			"settings":
 			{
-				"buffer_size": 9511,
+				"buffer_size": 10010,
 				"line_ending": "Unix"
 			}
 		},
@@ -253,6 +253,9 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"lat",
+			"_northEast.lat",
+			"lat",
 			"screen",
 			"webkit",
 			"console.log",
@@ -391,7 +394,7 @@
 	"groups":
 	[
 		{
-			"selected": 4,
+			"selected": 3,
 			"sheets":
 			[
 				{
@@ -489,15 +492,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 9511,
+						"buffer_size": 10010,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								7190,
-								7190
+								5762,
+								5762
 							]
 						],
 						"settings":
@@ -507,10 +510,10 @@
 							"word_wrap": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 3195.0,
+						"translation.y": 3015.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 0,
 					"type": "text"
 				},
 				{
@@ -537,10 +540,10 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 630.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 1,
 					"type": "text"
 				}
 			]

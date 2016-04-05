@@ -1,6 +1,6 @@
 var routeRefCollection = [];
-
 var routeLabelRef = {};
+var lastBBox;
 
 function updateFeature() {
 	
@@ -200,39 +200,68 @@ function parseResponse(data) {
 	});
 }
 
+function enlargedBBox(bbox, factor) {
+	var tempBBox = bbox;
+	height = tempBBox._northEast.lat - tempBBox._southWest.lat;
+	width = tempBBox._northEast.lng - tempBBox._southWest.lng;
+	tempBBox._northEast.lat += factor*height;
+	tempBBox._northEast.lng += factor*width;
+	tempBBox._southWest.lat -= factor*height;
+	tempBBox._southWest.lng -= factor*width;
+	return tempBBox;
+}
+
 function renderTraffic() {
 	var url = '';
+	var render = true;
 	if (screen.width < 800) {
-		var latmax = map.getBounds()._northEast["lat"];
-		var lngmax = map.getBounds()._northEast["lng"];
-		var latmin = map.getBounds()._southWest["lat"];
-		var lngmin = map.getBounds()._southWest["lng"];
-		url = 'http://bmhdapi-geosimon.rhcloud.com/vehicles.json?latmax=' + latmax + '&lonmax=' + lngmax + '&latmin=' + latmin + '&lonmin=' + lngmin + '&callback=parseResponse';
+		var bBox = map.getBounds();
+		if (
+			bBox._northEast.lat > lastBBox._northEast.lat ||
+			bBox._northEast.lng > lastBBox._northEast.lng ||
+			bBox._southWest.lat < lastBBox._southWest.lat ||
+			bBox._southWest.lng < lastBBox._southWest.lng
+			) {
+			bBox = enlargedBBox(bBox, 1);
+			var latmax = bBox._northEast.lat;
+			var lngmax = bBox._northEast.lng;
+			var latmin = bBox._southWest.lat;
+			var lngmin = bBox._southWest.lng;
+			url = 'http://bmhdapi-geosimon.rhcloud.com/vehicles.json?latmax=' + latmax + '&lngmax=' + lngmax + '&latmin=' + latmin + '&lngmin=' + lngmin + '&callback=parseResponse';
+			lastBBox = bBox;
+		} else {
+			render = false;
+			console.info("Map hasn't moved out of last bounds.");
+		}
 	} else {
 		url = 'http://bmhdapi-geosimon.rhcloud.com/vehicles.json?callback=parseResponse';
 	}
-	$.ajax({
-		type: "get",
-		dataType: "jsonp",
-		jsonp: "parseResponse",
-		url: url,
-		// url: "http://bmhd.simonleitgeb.cz/poloha.json",
-		success: function(response) {
-			console.log(response);
-		},
-		complete: function() {
-		}
-	}).error(function() {});
+	if (render) {
+		$.ajax({
+			type: "get",
+			dataType: "jsonp",
+			jsonp: "parseResponse",
+			url: url,
+			// url: "http://bmhd.simonleitgeb.cz/poloha.json",
+			success: function(response) {
+				console.log(response);
+			},
+			complete: function() {
+			}
+		}).error(function() {});
+	}
 }
 
 (function renderTraffic() {
 	var url = '';
 	if (screen.width < 800) {
-		var latmax = map.getBounds()._northEast["lat"];
-		var lngmax = map.getBounds()._northEast["lng"];
-		var latmin = map.getBounds()._southWest["lat"];
-		var lngmin = map.getBounds()._southWest["lng"];
+		var bBox = enlargedBBox(map.getBounds(), 1);
+		var latmax = bBox._northEast.lat;
+		var lngmax = bBox._northEast.lng;
+		var latmin = bBox._southWest.lat;
+		var lngmin = bBox._southWest.lng;
 		url = 'http://bmhdapi-geosimon.rhcloud.com/vehicles.json?latmax=' + latmax + '&lonmax=' + lngmax + '&latmin=' + latmin + '&lonmin=' + lngmin + '&callback=parseResponse';
+		lastBBox = bBox;
 	} else {
 		url = 'http://bmhdapi-geosimon.rhcloud.com/vehicles.json?callback=parseResponse';
 	}
