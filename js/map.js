@@ -260,7 +260,7 @@ function renderTraffic() {
 		var lngmax = bBox._northEast.lng;
 		var latmin = bBox._southWest.lat;
 		var lngmin = bBox._southWest.lng;
-		url = 'http://bmhdapi-geosimon.rhcloud.com/vehicles.json?latmax=' + latmax + '&lonmax=' + lngmax + '&latmin=' + latmin + '&lonmin=' + lngmin + '&callback=parseResponse';
+		url = 'http://bmhdapi-geosimon.rhcloud.com/vehicles.json?latmax=' + latmax + '&lngmax=' + lngmax + '&latmin=' + latmin + '&lngmin=' + lngmin + '&callback=parseResponse';
 		lastBBox = bBox;
 	} else {
 		url = 'http://bmhdapi-geosimon.rhcloud.com/vehicles.json?callback=parseResponse';
