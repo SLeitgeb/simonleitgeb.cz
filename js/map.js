@@ -1,6 +1,7 @@
 var routeRefCollection = [];
 var routeLabelRef = {};
 var lastBBox;
+var bBoxFactor = 0.5;
 
 function updateFeature() {
 	
@@ -222,7 +223,7 @@ function renderTraffic() {
 			bBox._southWest.lat < lastBBox._southWest.lat ||
 			bBox._southWest.lng < lastBBox._southWest.lng
 			) {
-			bBox = enlargedBBox(bBox, 1);
+			bBox = enlargedBBox(bBox, bBoxFactor);
 			var latmax = bBox._northEast.lat;
 			var lngmax = bBox._northEast.lng;
 			var latmin = bBox._southWest.lat;
@@ -255,7 +256,7 @@ function renderTraffic() {
 (function renderTraffic() {
 	var url = '';
 	if (screen.width < 800) {
-		var bBox = enlargedBBox(map.getBounds(), 1);
+		var bBox = enlargedBBox(map.getBounds(), bBoxFactor);
 		var latmax = bBox._northEast.lat;
 		var lngmax = bBox._northEast.lng;
 		var latmin = bBox._southWest.lat;
