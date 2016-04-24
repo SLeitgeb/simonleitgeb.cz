@@ -79,21 +79,26 @@ var trolIcon = L.icon({
 	popupAnchor: [0, -15]
 });
 
-var OSMlayer = L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
-    attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-});
+//// Remove OSM layer until I figure out how to render it properly on high density screens.
+// var OSMlayer = L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+//     attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors',
+//     detectRetina: false,
+//     // tileSize: 128,
+//     reuseTiles: true
+// });
 
-var GMaps = L.tileLayer('http://{s}.google.com/vt/lyrs=m&x={x}&y={y}&z={z}',{
+var GMaps = L.tileLayer('http://{s}.google.com/vt/lyrs=m&x={x}&y={y}&z={z}' + (L.Browser.retina ? '&scale=2' : ''),{
     maxZoom: 20,
+    detectRetina: false,
     subdomains:['mt0','mt1','mt2','mt3']
 });
 
-var uzavirky = L.tileLayer.wms("http://gis.brno.cz/arcgis/rest/services/PUBLIC/uzavirky/MapServer", {
-    layers: 'Uzavírky (schválené)',
-    format: 'image/png',
-    transparent: false,
-    attribution: "Město Brno"
-});
+// var uzavirky = L.tileLayer.wms("http://gis.brno.cz/arcgis/rest/services/PUBLIC/uzavirky/MapServer", {
+//     layers: 'Uzavírky (schválené)',
+//     format: 'image/png',
+//     transparent: false,
+//     attribution: "Město Brno"
+// });
 
 var trafficMarkers = L.geoJson([], {
 	onEachFeature: onEachMarker,
@@ -107,10 +112,10 @@ var trafficMarkers = L.geoJson([], {
 		if (val < 89) {return L.rotatedMarker(latlng, {icon: busIcon, angle: rotate });} else
 		if (val < 100) {return L.rotatedMarker(latlng, {icon: nbusIcon, angle: rotate });} else
 		{return L.rotatedMarker(latlng, {icon: trafficIcon, angle: rotate });}
-	},
-
-	attribution: 'Šotoris'
+	}
 });
+
+trafficMarkers.getAttribution = function () { return '<a href="http://sotoris.cz/">Šotoris</a>'; };
 
 var trafficNumbers = L.geoJson([], {
 	pointToLayer: function (feature, latlng) {
@@ -137,13 +142,13 @@ var map = L.map ("map", {
 });
 
 var baseLayers = {
-	"OpenStreetMap": OSMlayer,
+	// "OpenStreetMap": OSMlayer,
 	"Google Maps": GMaps
 };
 
 var overlays = {
 	"Poloha MHD": traffic,
-	"Uzavírky": uzavirky
+	// "Uzavírky": uzavirky
 	// "Trasy MHD": trafficRoutes
 };
 
@@ -152,7 +157,9 @@ var zoom = L.control.zoom({
 });
 
 zoom.addTo(map);
-L.control.layers(baseLayers, overlays).addTo(map);
+
+//// Layer picker is not needed right now. 
+// L.control.layers(baseLayers, overlays).addTo(map);
 
 var trafficRoutes = L.geoJson([], {
 	onEachFeature: onEachRoute,

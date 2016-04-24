@@ -87,7 +87,7 @@
 			"file": "js/map.js",
 			"settings":
 			{
-				"buffer_size": 10010,
+				"buffer_size": 10427,
 				"line_ending": "Unix"
 			}
 		},
@@ -190,6 +190,10 @@
 	],
 	"file_history":
 	[
+		"/home/sleitgeb/private/data/ceska_sporitelna/DATAFEST_CARDS.csv",
+		"/var/lib/pgsql/data/pg_hba.conf",
+		"/home/sleitgeb/Dropbox/access.txt",
+		"/home/sleitgeb/private/data/DATAFEST_TRANSACTIONS.csv",
 		"/home/sleitgeb/private/cz.simonleitgeb/simonleitgeb.cz/.gitignore",
 		"/home/sleitgeb/private/cz.simonleitgeb/simonleitgeb.cz/mhd.html?47687764",
 		"/home/sleitgeb/private/cz.simonleitgeb/simonleitgeb.cz/js/mobile-layout.js",
@@ -200,7 +204,6 @@
 		"/home/sleitgeb/prace/Projects/cordova/vectorWmsOtn/www/index.html",
 		"/home/sleitgeb/prace/Projects/cordova/.gitignore",
 		"/home/sleitgeb/prace/Projects/temp/cordova/.gitignore",
-		"/home/sleitgeb/Dropbox/access.txt",
 		"/home/sleitgeb/Dropbox/skola/Bakalarska_prace/prezentace_obhajoba.toc",
 		"/home/sleitgeb/private/cz.simonleitgeb/simonleitgeb.cz/convertor.html",
 		"/home/sleitgeb/.config/sublime-text-3/Packages/User/Preferences.sublime-settings",
@@ -253,6 +256,24 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"ident",
+			"lon",
+			"showBounds",
+			"console.info",
+			"toString",
+			"bbox",
+			"bBox",
+			"\n",
+			"bBox",
+			"[\"",
+			"bbox",
+			"bBox",
+			"bbox",
+			".lng",
+			"height",
+			"bBox",
+			"\n",
+			"bBox",
 			"lat",
 			"_northEast.lat",
 			"lat",
@@ -362,20 +383,7 @@
 			"GR_ZM50",
 			"hodgins",
 			"calc",
-			"false",
-			"uprchl",
-			"imig",
-			"pohled",
-			"kurva",
-			"říká",
-			"století",
-			"matiky",
-			"hodiny",
-			"štít",
-			"vero",
-			"první",
-			"[X=:;][/oDP)(\\]]",
-			"&gt"
+			"false"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -492,15 +500,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 10010,
+						"buffer_size": 10427,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								5762,
-								5762
+								2388,
+								2388
 							]
 						],
 						"settings":
@@ -510,7 +518,7 @@
 							"word_wrap": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 3015.0,
+						"translation.y": 960.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
@@ -529,8 +537,8 @@
 						"selection":
 						[
 							[
-								3464,
-								3464
+								139,
+								139
 							]
 						],
 						"settings":
