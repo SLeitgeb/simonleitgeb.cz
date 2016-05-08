@@ -79,6 +79,20 @@ var trolIcon = L.icon({
 	popupAnchor: [0, -15]
 });
 
+var positionFeature = L.circleMarker([0, 0], {
+		color: '#2FA4E8',
+		radius: 8,
+		fillOpacity: 0.5,
+		clickable: false
+	});
+	
+var accuracyFeature = L.circle([0, 0], 0, {
+		color: '#93D9EC',
+		fillOpacity: 0.4,
+		weight: 2,
+		clickable: false
+	});
+
 //// Remove OSM layer until I figure out how to render it properly on high density screens.
 // var OSMlayer = L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
 //     attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors',
@@ -329,45 +343,33 @@ function renderTraffic() {
 function toggleGeolocation(event) {
 	if (document.getElementById("geolocationSwitch").classList.contains("active")) {
 		map.stopLocate();
+		map.removeLayer(positionFeature);
+		map.removeLayer(accuracyFeature);
 		map.off("dragstart", toggleGeolocation);
 	} else {
 		map.locate({
-	  		watch: true
+	  		watch: true,
+	  		enableHighAccuracy: true
 	  	});
+		positionFeature.addTo(map);
+		accuracyFeature.addTo(map);
 	  	map.on("dragstart", toggleGeolocation);
 	}
   	document.getElementById("geolocationSwitch").classList.toggle("active");
 }
 
-function locationSuccess(event) {
-	map.panTo([event.latlng["lat"], event.latlng["lng"]]);
+function locationSuccess(e) {
+	map.panTo(e.latlng);
+	var radius = e.accuracy / 2;
+	positionFeature.setLatLng(e.latlng);
+	accuracyFeature.setLatLng(e.latlng);
+	accuracyFeature.setRadius(radius);
 }
 
-document.getElementById("geolocationSwitch").addEventListener("click", toggleGeolocation);
-
 map.on('locationfound', locationSuccess);
+
+document.getElementById("geolocationSwitch").addEventListener("click", toggleGeolocation);
 
 if (screen.width < 800) {
 	map.on('moveend', renderTraffic);
 }
-
-// (function locate() {
-// 	map.locate({
-// 		watch: true,
-// 		setView: true,
-// 		maxZoom: 15
-// 	});	
-// })();
-
-// L.circleMarker([49.20301, 16.64184], {
-// 	radius: 3
-// }).addTo(map);
-
-// map.panTo([49.20301, 16.64184]);
-
-// $.ajax({
-//     url: 'http://sotoris.cz/DataSource/CityHack2015/vehiclesBrno.aspx',
-//     dataType: "jsonp",
-//     jsonp: 'callback',
-//     jsonpCallback: 'jsonp_callback'
-// });
