@@ -64,8 +64,10 @@ function drawO(x, y, r) {
 function highlightX(x, y, r) {
 	if ($('.h')[0]) {
 		var shape = $('.h')[0];
-		shape.setAttributeNS(null, "cx", posToCoord(x));
-		shape.setAttributeNS(null, "cy", posToCoord(y));
+		var x0 = posToCoord(x);
+		var y0 = posToCoord(y);
+		
+		shape.setAttributeNS(null, "d", "M " + (x0 - r) + " " + (y0 - r) + " L " + (x0 + r) + " " + (y0 + r) + " M " + (x0 + r) + " " + (y0 - r) + " L " + (x0 - r) + " " + (y0 + r));
 	} else {
 		var shape = svgDoc.createElementNS(svgNS, "path");
 		var x0 = posToCoord(x);
